@@ -12,6 +12,16 @@ ActiveAdmin.register Employee do
 #   permitted
 # end
 
-	permit_params :name, :description, :job_title, :employee_id
+  permit_params :name, :description, :job_title, :image, :employee_id
+
+  form :html => { :multipart => true } do |f|
+    f.inputs "Employee" do
+      f.input :name
+      f.input :job_title
+      f.input :image, :as => :file
+      f.input :description, :as => :text
+    end
+    f.actions
+  end
 
 end
