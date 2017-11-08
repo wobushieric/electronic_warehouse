@@ -1,7 +1,14 @@
 .container
   h1.my-4
     | About Us
-    small It's Nice to Meet You!
-  div
+  p Our mission is to "create customers for life". With this in mind, we are dedicated to providing our customers with more value than our competitors in terms of service, selection, and savings. We invest in our staff and provide a positive and pleasant working environment. We cannot deliver the exceptional standard of customer service without a committed and dedicated team. Our customers are our most important asset, without them we would not have a successful business. We value integrity and trust, reliability, results, and responsiveness.
+
+  .row
+    .col-lg-12
+      h2.my-4 Our Team
     = render partial: 'employee', \
       collection: @employees
+
+footer.py-5.bg-dark
+  .container
+    p.m-0.text-center.text-white Copyright © Electronic Warehouse 2017
