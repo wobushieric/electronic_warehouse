@@ -1,0 +1,6 @@
+.col-lg-4.col-sm-6.text-center.mb-4.employee
+  = image_tag(employee.image_url, :class => "rounded-circle img-fluid d-block mx-auto" )
+  h3
+    = employee.name
+    small= employee.job_title
+  p= employee.description
