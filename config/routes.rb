@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
+  root :to => 'product#home'
+
   get 'about_us', to: 'employee#index'
 
   get 'employeesdata', to: 'employee#test'
 
-  get 'home_product', to: 'product#home'
+  get 'home', to: 'product#home'
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)

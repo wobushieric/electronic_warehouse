@@ -1,0 +1,11 @@
+.container
+  header.jumbotron.my-4
+    h1.display-3
+      | Welcome to Electornic Warehouse!
+    p.lead
+      | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, ipsam, eligendi, in quo sunt possimus non incidunt odit vero aliquid similique quaerat nam nobis illo aspernatur vitae fugiat numquam repellat.
+    a.btn.btn-primary.btn-lg[href="#"]
+      | Start Shopping
+  .row.text-center
+    = render partial: 'product', \
+      collection: @rand_product
