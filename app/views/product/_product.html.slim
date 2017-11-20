@@ -8,5 +8,4 @@
         | $
         = product.price
     .card-footer
-      a.btn.btn-primary[href="#"]
-        | Details
+      = link_to 'More', products_path, :class => "btn btn-primary"

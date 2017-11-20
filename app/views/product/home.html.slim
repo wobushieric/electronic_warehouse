@@ -3,9 +3,8 @@
     h1.display-3
       | Welcome to Electornic Warehouse!
     p.lead
-      | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, ipsam, eligendi, in quo sunt possimus non incidunt odit vero aliquid similique quaerat nam nobis illo aspernatur vitae fugiat numquam repellat.
-    a.btn.btn-primary.btn-lg[href="#"]
-      | Start Shopping
+      | Our vision is to be the greatest computer and electronics company; great to buy from, great to work for, and great to do business with.
+    = link_to 'Start Shopping', products_path, :class => "btn btn-primary btn-lg"
   .row.text-center
     = render partial: 'product', \
       collection: @rand_product

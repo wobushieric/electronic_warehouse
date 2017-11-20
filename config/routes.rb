@@ -7,6 +7,10 @@ Rails.application.routes.draw do
 
   get 'home', to: 'product#home'
 
+  get 'products', to: 'product#products'
+
+  get 'products/:category_id', to: 'product#product_by_category', as: 'product_category'
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

@@ -1,0 +1,16 @@
+.col-lg-4.col-md-6.mb-4
+  .card.h-100
+    = link_to (image_tag (shop_product.image_url), :class => ".card-img-top"), products_path
+    .card-body
+      h4.card-title
+        = link_to (shop_product.name), products_path
+      h5
+        | $
+        = shop_product.price
+      p.card-text
+        - if shop_product.description.length > 60
+          = shop_product.description[0..60] + '...'
+        - else
+          = shop_product.description
+    .card-footer
+      = link_to 'Details', products_path, :class => "btn btn-primary"

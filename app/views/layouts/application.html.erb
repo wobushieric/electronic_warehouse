@@ -20,13 +20,13 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <%= link_to 'Home', root_path, :class => "nav-link" %>
+              <%= link_to 'Home', root_path, :class => "nav-link navhome" %>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Browse</a>
+              <%= link_to 'Shopping', products_path, :class => "nav-link navshop" %>
             </li>
             <li class="nav-item">
-              <%= link_to 'About us', about_us_path, :class => "nav-link" %>
+              <%= link_to 'About us', about_us_path, :class => "nav-link navabout" %>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#"><i class="fa fa-shopping-cart"></i> Cart</a>
