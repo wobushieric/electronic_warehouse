@@ -5,7 +5,7 @@ class ProductController < ApplicationController
 
 	def products		
 		@categories = Category.all
-		@products = Product.all.limit(12)
+		@products = Product.all.page(params[:page]).per(9)
 	end
 
 	def product_by_category

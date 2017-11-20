@@ -29,3 +29,4 @@
       .row
         = render partial: 'shop_product', \
         collection: @products
+      = paginate @products, theme: 'twitter-bootstrap-4', pagination_class: "pull-right"
