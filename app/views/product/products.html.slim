@@ -13,11 +13,11 @@
           li[data-target="#carouselExampleIndicators" data-slide-to="2"]
         .carousel-inner[role="listbox"]
           .carousel-item.active
-            img.d-block.img-fluid[src="http://placehold.it/900x350" alt="First slide"]
+            = image_tag("banner_ps4.jpg", :class => "d-block img-fluid")
           .carousel-item
-            img.d-block.img-fluid[src="http://placehold.it/900x350" alt="Second slide"]
+            = image_tag("banner_iphone_x.jpg", :class => "d-block img-fluid")
           .carousel-item
-            img.d-block.img-fluid[src="http://placehold.it/900x350" alt="Third slide"]
+            = image_tag("banner_google_chromecast.jpg", :class => "d-block img-fluid")
         a.carousel-control-prev[href="#carouselExampleIndicators" role="button" data-slide="prev"]
           span.carousel-control-prev-icon[aria-hidden="true"]
           span.sr-only
