@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   get 'products', to: 'product#products'
 
-  get 'products/:category_id', to: 'product#product_by_category', as: 'product_category'
+  get 'products/:category_id', to: 'product#products'
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
