@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   root :to => 'product#home'
 
   get 'about_us', to: 'employee#index'
