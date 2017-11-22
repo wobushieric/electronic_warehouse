@@ -13,4 +13,5 @@
         - else
           = shop_product.description
     .card-footer
-      = link_to 'Details', product_details_path(:product_id => shop_product.id), :class => "btn btn-primary pull-right"
+      = link_to 'Details', product_details_path(:product_id => shop_product.id), :class => "btn btn-primary pull-left"
+      = link_to '<i class="fa fa-shopping-cart"></i> Add To Cart'.html_safe, products_path, :class => "btn btn-primary pull-right"

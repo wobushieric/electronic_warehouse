@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'cart/add'
+
+  get 'cart/remove'
+
   devise_for :users
   root :to => 'product#home'
 
