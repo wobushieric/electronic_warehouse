@@ -3,7 +3,7 @@
     .col-lg-12.mt-4
       form.form-inline.navbar-left[role="search"]
         .form-group
-          = select_tag "category", options_from_collection_for_select(@categories, "id", "name"), include_blank: true
+          = select_tag "category", options_from_collection_for_select(@all_categories, "id", "name"), include_blank: true
           input.ml-2.mr-2.form-control[type="text" placeholder="Search" name="key"]
         button.btn.btn-default[type="submit"]
           | Submit
