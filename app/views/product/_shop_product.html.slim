@@ -1,9 +1,9 @@
 .col-lg-4.col-md-6.mb-4
   .card.h-100
-    = link_to (image_tag (shop_product.image_url), :class => ".card-img-top"), products_path
+    = link_to (image_tag (shop_product.image_url), :class => ".card-img-top"), product_details_path(:product_id => shop_product.id)
     .card-body
       h4.card-title
-        = link_to (shop_product.name), products_path
+        = link_to (shop_product.name), product_details_path(:product_id => shop_product.id)
       h5
         | $
         = shop_product.price
@@ -13,4 +13,4 @@
         - else
           = shop_product.description
     .card-footer
-      = link_to 'Details', products_path, :class => "btn btn-primary pull-right"
+      = link_to 'Details', product_details_path(:product_id => shop_product.id), :class => "btn btn-primary pull-right"
