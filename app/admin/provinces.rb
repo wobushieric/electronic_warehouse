@@ -12,6 +12,6 @@ ActiveAdmin.register Province do
 #   permitted
 # end
 
-permit_params :name, :price, :province_id
+permit_params :name, :tax_rate, :province_id
 
 end
