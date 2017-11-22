@@ -1,4 +1,26 @@
 .container
   .row
+  	.col-lg-3.mt-2
+  	  = link_to '<i class="fa fa-arrow-left" aria-hidden="true"></i> Back'.html_safe, products_path
+  .row.align-items-center.h-100
   	.col-lg-6.my-4
   	  = image_tag(@product.image_url, :class => "w-100" )
+  	.col-lg-6.my-4.justify-content-center
+  	  .row
+  	    h4.my-4.mx-auto
+  	      = @product.name
+  	  .row
+  	    small.my-4.mx-auto
+  	      | In Stock: 
+  		  = @product.stock_quantity
+  	  .row
+  	    = link_to 'Add To Cart', products_path, :class => "btn btn-primary my-4 mx-auto"
+  .row
+  	.col-lg-12.mb-4
+      ul.nav.nav-tabs
+	    li.nav-item
+	      a.nav-link.active[href="#"]
+	        | Details
+  .row
+  	.col-lg-12.mb-5
+  	  = @product.description + @product.description
