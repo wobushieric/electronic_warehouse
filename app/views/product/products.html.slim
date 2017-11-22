@@ -13,6 +13,8 @@
       .list-group
         - @categories.each do |category|
           = link_to category.name, products_path(:category => category.id), :class => "list-group-item"
+        - if @categories.count == 1
+          = link_to 'Back To All', products_path, :class => "list-group-item"
     .col-lg-9
       #carouselExampleIndicators.carousel.slide.my-4[data-ride="carousel"]
         ol.carousel-indicators
