@@ -6,7 +6,7 @@
           = select_tag "category", options_from_collection_for_select(@all_categories, "id", "name"), include_blank: true
           input.ml-2.mr-2.form-control[type="text" placeholder="Search" name="key"]
         button.btn.btn-default[type="submit"]
-          | Submit
+          | Search
   .row
     .col-lg-3
       .list-group.my-4
@@ -38,6 +38,8 @@
           span.carousel-control-next-icon[aria-hidden="true"]
           span.sr-only
             | Next
+      .row
+
       .row
         = render partial: 'shop_product', \
         collection: @products
