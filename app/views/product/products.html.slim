@@ -15,8 +15,8 @@
         - if @categories.count == 1
           = link_to 'Back To All', products_path, :class => "list-group-item"
       .list-group.my-4
-        = link_to 'New Products', products_path, :class => "list-group-item"
-        = link_to 'Recently Updated', products_path, :class => "list-group-item"
+        = link_to 'New Products', products_path(:sort => 'create'), :class => "list-group-item"
+        = link_to 'Recently Updated', products_path(:sort => 'update'), :class => "list-group-item"
     .col-lg-9
       #carouselExampleIndicators.carousel.slide.my-4[data-ride="carousel"]
         ol.carousel-indicators
