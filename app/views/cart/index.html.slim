@@ -25,8 +25,9 @@
 			      i.fa.fa-plus[aria-hidden="true"]
           .col.text-right
             .row
-              | $
-              = @product.price
+              strong
+                | $
+                = @product.price
             .row
               = link_to '<i class="fa fa-times" aria-hidden="true"></i> Remove'.html_safe, products_path
         .row.my-2.align-items-center
@@ -47,7 +48,8 @@
 			      i.fa.fa-plus[aria-hidden="true"]
           .col.text-right
             .row
-              | $
-              = @product.price
+              strong
+                | $
+                = @product.price
             .row
               = link_to '<i class="fa fa-times" aria-hidden="true"></i> Remove'.html_safe, products_path
