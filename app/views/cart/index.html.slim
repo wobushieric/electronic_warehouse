@@ -1,2 +1,53 @@
-h1 Cart#add
-p Find me in app/views/cart/add.html.slim
+.container
+  .card.my-4
+    .card-header.pull-left
+      h4.pull-left
+        | Your Shopping Cart
+      h4.pull-right
+        | 2 Items
+    .card-block
+      .container
+        .row.my-2.align-items-center
+          .col
+            = image_tag(@product.image_url, :class => "card-img-top w-100 h-100" )
+          .col-4
+            = @product.name
+          .col-1.text-right
+            | Qty :
+          .col-4
+            .input-group.w-50
+			  span.input-group-btn
+			    button.btn.btn-danger.btn-number[type="button" data-type="minus" data-field="quant[2]"]
+			      i.fa.fa-minus[aria-hidden="true"]
+			  input.form-control.input-number[type="text" name="quant[2]" value="10" min="1" max="100"]
+			  span.input-group-btn
+			    button.btn.btn-success.btn-number[type="button" data-type="plus" data-field="quant[2]"]
+			      i.fa.fa-plus[aria-hidden="true"]
+          .col.text-right
+            .row
+              | $
+              = @product.price
+            .row
+              = link_to '<i class="fa fa-times" aria-hidden="true"></i> Remove'.html_safe, products_path
+        .row.my-2.align-items-center
+          .col
+            = image_tag(@product.image_url, :class => "card-img-top w-100 h-100" )
+          .col-4
+            = @product.name
+          .col-1.text-right
+            | Qty :
+          .col-4
+            .input-group.w-50
+			  span.input-group-btn
+			    button.btn.btn-danger.btn-number[type="button" data-type="minus" data-field="quant[2]"]
+			      i.fa.fa-minus[aria-hidden="true"]
+			  input.form-control.input-number[type="text" name="quant[2]" value="10" min="1" max="100"]
+			  span.input-group-btn
+			    button.btn.btn-success.btn-number[type="button" data-type="plus" data-field="quant[2]"]
+			      i.fa.fa-plus[aria-hidden="true"]
+          .col.text-right
+            .row
+              | $
+              = @product.price
+            .row
+              = link_to '<i class="fa fa-times" aria-hidden="true"></i> Remove'.html_safe, products_path
