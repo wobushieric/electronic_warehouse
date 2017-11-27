@@ -2,12 +2,16 @@ class CartController < ApplicationController
   before_action :cart_session
 
   def index
+  	session[:cart][1] = 6
+  	session[:cart][2] = 5
+
   	@cart = session[:cart]
-  	@product = Product.first
+  	@products = Product.where(:id => session[:cart].keys)
+  
   end
 
   def add_remove
-  	if params[:qty].blank?
+  	if params[:qty].blank? || params[:qty] == 0
   		# Remove item from cart
   		session[:cart].delete(params[:product_id])
   	else
@@ -16,7 +20,7 @@ class CartController < ApplicationController
   	end
 
   	redirect_to cart_path
-  	
+
   end
 
   def cart_session
