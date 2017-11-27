@@ -1,8 +1,3 @@
-= debug session[:cart]
-= javascript_tag do
-  |  var cart = '
-  = session[:cart]
-  | '; 
 .container
   .row
   	.col-lg-3.mt-2
@@ -12,49 +7,51 @@
       h4.pull-left
         | Your Shopping Cart
       h4.pull-right
-        | 2 Items
+        = session[:cart].length
+        |  Items
     .card-block
       .container
         = render partial: 'cart_item', \
         collection: @products
-    .card-footer
-      .container
-        .row.my-4
-          .col-lg-6
-          .col-lg-6
-            .row
-              .col
-                h4
-                  | Subtotal:
-              .col
-                h4.pull-right
-                  | $999.99
-            .row
-              .col
-                h7
-                  | If Ship to Winnipeg
-              .col
-            .row
-              .col
-                h7
-                  | GST:
-              .col
-                h7.pull-right
-                  | 9.99
-            .row
-              .col
-                h7
-                  | PST:
-              .col
-                h7.pull-right
-                  | 9.99
-            .row.my-4
-              .col
-                h5
-                  | Estimated Total:
-              .col
-                h5.pull-right
-                  | $1199.99
-            .row.my-4
-              button.btn.btn-primary.btn-lg.btn-block[type="button"]
-  				| Check Out
+    - if @products.count > 0
+      .card-footer
+        .container
+          .row.my-4
+            .col-lg-6
+            .col-lg-6
+              .row
+                .col
+                  h4
+                    | Subtotal:
+                .col
+                  h4.pull-right
+                    | $999.99
+              .row
+                .col
+                  h7
+                    | If Ship to Winnipeg
+                .col
+              .row
+                .col
+                  h7
+                    | GST:
+                .col
+                  h7.pull-right
+                    | 9.99
+              .row
+                .col
+                  h7
+                    | PST:
+                .col
+                  h7.pull-right
+                    | 9.99
+              .row.my-4
+                .col
+                  h5
+                    | Estimated Total:
+                .col
+                  h5.pull-right
+                    | $1199.99
+              .row.my-4
+                button.btn.btn-primary.btn-lg.btn-block[type="button"]
+  	  			  | Check Out

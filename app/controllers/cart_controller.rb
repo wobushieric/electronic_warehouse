@@ -2,10 +2,7 @@ class CartController < ApplicationController
   before_action :cart_session
 
   def index
-  	
-  	@cart = session[:cart]
   	@products = Product.where(:id => session[:cart].keys)
-  
   end
 
   def add_remove

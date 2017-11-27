@@ -14,7 +14,7 @@
   	      | In Stock: 
   		  = @product.stock_quantity
   	  .row
-  	    = link_to '<i class="fa fa-shopping-cart"></i> Add To Cart'.html_safe, products_path, :class => "btn btn-primary my-4 mx-auto"
+  	    = link_to '<i class="fa fa-shopping-cart"></i> Add To Cart'.html_safe, update_cart_path(@product.id.to_s, 1.to_s), :class => "btn btn-primary my-4 mx-auto"
   .row
   	.col-lg-12.mb-4
       ul.nav.nav-tabs
