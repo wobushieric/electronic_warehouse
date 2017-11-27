@@ -16,6 +16,11 @@ ready = function() {
   	$(this).find(".item-price").text("$ " + (qty * price).toFixed(2));
 
   	subtotal += qty * price;
+
+  	if(qty == 1){
+  		$(this).find(".btn-danger").addClass("disabled");
+  	}
+  	
   })
 
   $(".sub_total").text("$ " + subtotal.toFixed(2));
