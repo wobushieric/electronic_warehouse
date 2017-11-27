@@ -22,6 +22,8 @@ ready = function() {
   	console.log(price);
 
   	$(this).find(".item-price").text("$ " + (qty * price).toFixed(2));
+
+  	subtotal += qty * price;
   })
 };
 
