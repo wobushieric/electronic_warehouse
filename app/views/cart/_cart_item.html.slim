@@ -10,7 +10,7 @@
       span.input-group-btn
         button.btn.btn-danger.btn-number.add-qty[type="button" data-type="minus" data-field="quant[2]"]
           i.fa.fa-minus[aria-hidden="true"]
-      input.form-control.input-number.text-center[type="text" name="quant[2]" value="1" min="1" max="100" disabled]
+      = text_field_tag nil, session[:cart][cart_item.id.to_s].to_i, class: "form-control input-number text-center", disabled: true
       span.input-group-btn
         button.btn.btn-success.btn-number.minus-qty[type="button" data-type="plus" data-field="quant[2]"]
           i.fa.fa-plus[aria-hidden="true"]

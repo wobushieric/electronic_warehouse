@@ -17,6 +17,8 @@ Rails.application.routes.draw do
 
   get 'cart', to: 'cart#index'
 
+  get 'cart/:product_id/:qty', to: 'cart#add_remove', as: 'update_cart'
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
