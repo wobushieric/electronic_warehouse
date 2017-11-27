@@ -1,4 +1,4 @@
-.row.my-2.align-items-center
+.row.my-2.align-items-center.cart-item
   .col
     = image_tag(cart_item.image_url, :class => "card-img-top w-100 h-100" )
   .col-4
@@ -9,13 +9,12 @@
     .input-group.w-50
       span.input-group-btn
         = link_to '<i class="fa fa-minus"></i>'.html_safe, update_cart_path(cart_item.id.to_s, (session[:cart][cart_item.id.to_s].to_i - 1).to_s), :class => "btn btn-danger btn-number"
-      = text_field_tag nil, session[:cart][cart_item.id.to_s].to_i, class: "form-control input-number text-center", disabled: true
+      = text_field_tag nil, session[:cart][cart_item.id.to_s].to_i, class: "form-control input-number text-center item-qty", disabled: true
       span.input-group-btn
         = link_to '<i class="fa fa-plus"></i>'.html_safe, update_cart_path(cart_item.id.to_s, (session[:cart][cart_item.id.to_s].to_i + 1).to_s), :class => "btn btn-success btn-number"
   .col.text-right
     .row
-      strong.product-price
-        | $ 
+      strong.item-price
         = cart_item.price
     .row
       = link_to '<i class="fa fa-times" aria-hidden="true"></i> Remove'.html_safe, update_cart_path(cart_item.id.to_s, 0.to_s)
