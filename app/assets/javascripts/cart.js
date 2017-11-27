@@ -1,9 +1,3 @@
-var ready;
-var qty = 0;
-var price = 0;
-var subtotal =0;
-var estimatedTotal = 0;
-
 var MB_GST = 0.05;
 var MB_PST = 0.08;
 
@@ -11,7 +5,7 @@ ready = function() {
 
   var qty = 0;
   var price = 0;
-  var subtotal =0;
+  var subtotal = 0;
   var estimatedTotal = 0;
   var cartItems = $(".cart-item");
 
