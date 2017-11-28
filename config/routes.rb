@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  get 'cust_address/index'
+
+  get 'cust_address/new'
+
+  get 'cust_address/update'
+
+  get 'cust_address/delete'
+
   devise_for :users
   root :to => 'product#home'
 
