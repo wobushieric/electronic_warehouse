@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'charge/new'
+  get 'charge/new', to: 'charge#new'
 
   get 'charge/charge'
 

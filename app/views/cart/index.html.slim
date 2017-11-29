@@ -84,5 +84,4 @@
                     = @grand_total
               - if user_signed_in?
                 .row.my-4
-                  button.btn.btn-primary.btn-lg.btn-block[type="button"]
-    	  			    | Check Out
+                  = link_to 'Check Out', charge_new_path, :class => "btn btn-primary btn-lg btn-block"
