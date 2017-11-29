@@ -24,9 +24,12 @@
         = @address.postal_code
     .row
       .col
-        = link_to 'Update shipping address', user_centre_new_address_path, :class => "btn btn-primary my-2"
+        = link_to 'Update shipping address', user_centre_update_address_path, :class => "btn btn-primary my-2"
       .col
         = link_to 'Delete existing address', user_centre_delete_address_path, :class => "btn btn-secondary my-2"
   - else
     .row
       = link_to 'Add new shipping address', user_centre_new_address_path, :class => "btn btn-primary my-2"
+  .row
+    h5
+      | Orders History

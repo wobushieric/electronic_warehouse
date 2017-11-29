@@ -3,6 +3,11 @@ class CartController < ApplicationController
 
   def index
   	@products = Product.where(:id => session[:cart].keys)
+
+    if user_signed_in?
+      @address = CustAddress.where(:user_id => current_user.id).first
+    end
+    
   end
 
   def add_remove

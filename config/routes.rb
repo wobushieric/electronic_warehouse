@@ -6,7 +6,9 @@ Rails.application.routes.draw do
 
   post 'user_centre/new_address', to: 'cust_address#creat'
 
-  get 'cust_address/update'
+  get 'user_centre/update_address', to: 'cust_address#edit'
+
+  post 'user_centre/update_address', to: 'cust_address#update'  
 
   get 'user_centre/delete_address', to: 'cust_address#delete'
 

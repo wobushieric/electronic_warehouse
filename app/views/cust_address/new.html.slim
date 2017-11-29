@@ -2,7 +2,7 @@
   h5
     | New Address
   .row.my-4
-    = form_for @cust_address, as: :post, url: user_centre_new_address_path(@cust_address) do |f|
+    = form_for @cust_address, as: :post, url: user_centre_update_address_path(@cust_address) do |f|
       - if @cust_address.errors.any?
         #error_explanation
           h2 = "#{pluralize(@cust_address.errors.count, "error")} prohibited this cust_adress from being saved:"

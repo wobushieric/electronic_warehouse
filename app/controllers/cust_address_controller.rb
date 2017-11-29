@@ -31,7 +31,21 @@ class CustAddressController < ApplicationController
     end
   end
 
+  def edit
+    @cust_address = CustAddress.where(:user_id => current_user.id).first
+  end
+
   def update
+
+    @cust_address = CustAddress.where(:user_id => current_user.id).update(first_name: params[:post][:first_name],
+                                                                          last_name: params[:post][:last_name],
+                                                                          address: params[:post][:address],
+                                                                          city: params[:post][:city],
+                                                                          province_id: params[:post][:province_id],
+                                                                          postal_code: params[:post][:postal_code])
+
+    redirect_to user_centre_path
+
   end
 
   def delete
