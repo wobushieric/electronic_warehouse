@@ -23,7 +23,7 @@ ready = function() {
   	
   })
 
-  if($(".ship_address").text == "If Ship to Winnipeg"){
+  if($(".ship_address")["0"].innerText == "If Ship to Winnipeg"){
     $(".sub_total").text("$ " + subtotal.toFixed(2));
     $(".gst_amount").text((subtotal * MB_GST).toFixed(2));
     $(".pst_amount").text((subtotal * MB_PST).toFixed(2));
