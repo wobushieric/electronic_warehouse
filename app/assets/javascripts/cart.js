@@ -23,10 +23,12 @@ ready = function() {
   	
   })
 
-  $(".sub_total").text("$ " + subtotal.toFixed(2));
-  $(".gst_amount").text((subtotal * MB_GST).toFixed(2));
-  $(".pst_amount").text((subtotal * MB_PST).toFixed(2));
-  $(".est_amount").text("$ " + (subtotal * (1 + MB_GST + MB_PST)).toFixed(2));
+  if($(".ship_address").text == "If Ship to Winnipeg"){
+    $(".sub_total").text("$ " + subtotal.toFixed(2));
+    $(".gst_amount").text((subtotal * MB_GST).toFixed(2));
+    $(".pst_amount").text((subtotal * MB_PST).toFixed(2));
+    $(".est_amount").text("$ " + (subtotal * (1 + MB_GST + MB_PST)).toFixed(2));
+  }
 };
 
 $(document).on('turbolinks:load', ready);

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  shipping_address: MyString
+  cust_name: MyString
+  province: one
+  is_shipped: false
+  is_paid: false
+  user: one
+
+two:
+  shipping_address: MyString
+  cust_name: MyString
+  province: two
+  is_shipped: false
+  is_paid: false
+  user: two

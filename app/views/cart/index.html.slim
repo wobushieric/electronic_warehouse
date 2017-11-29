@@ -46,12 +46,13 @@
                     | Subtotal:
                 .col
                   h4.pull-right.sub_total
-                    | $999.99
+                    = @subtotal
               .row
                 .col
                   - if user_signed_in?
                     h7.ship_address
-                      | User Address
+                      | Ship To 
+                      = @address.city
                   - else
                     h7.ship_address
                       | If Ship to Winnipeg
@@ -62,14 +63,14 @@
                     | GST:
                 .col
                   h7.pull-right.gst_amount
-                    | 9.99
+                    = @gst_amount
               .row
                 .col
                   h7
                     | PST:
                 .col
                   h7.pull-right.pst_amount
-                    | 9.99
+                    = @pst_amount
               .row.my-4
                 .col
                   - if user_signed_in?
@@ -80,7 +81,7 @@
                       | Estimated Total:
                 .col
                   h5.pull-right.est_amount
-                    | $1199.99
+                    = @grand_total
               - if user_signed_in?
                 .row.my-4
                   button.btn.btn-primary.btn-lg.btn-block[type="button"]

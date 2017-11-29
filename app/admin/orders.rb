@@ -1,4 +1,4 @@
-ActiveAdmin.register User do
+ActiveAdmin.register Order do
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
@@ -12,6 +12,6 @@ ActiveAdmin.register User do
 #   permitted
 # end
 
-permit_params :user_id
+permit_params :shipping_address, :cust_name, :province_id, :is_shipped, :is_paid, :user_id, :order_id
 
 end
