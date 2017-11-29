@@ -1,2 +1,31 @@
-h1 CustAddress#update
-p Find me in app/views/cust_address/update.html.slim
+.container
+  h5
+    | Update Address
+  .row.my-4
+    = form_for @cust_address, as: :post, url: user_centre_new_address_path(@cust_address) do |f|
+      - if @cust_address.errors.any?
+        #error_explanation
+          h2 = "#{pluralize(@cust_address.errors.count, "error")} prohibited this cust_adress from being saved:"
+          ul
+            - @cust_address.errors.full_messages.each do |message|
+              li = message
+    
+      .field
+        = f.label :first_name
+        = f.text_field :first_name
+      .field
+        = f.label :last_name
+        = f.text_field :last_name
+      .field
+        = f.label :address
+        = f.text_field :address
+      .field
+        = f.label :city
+        = f.text_field :city
+      .field
+        = f.label :province
+        = f.collection_select :province_id, Province.all, :id, :name, include_blank: false
+      .field
+        = f.label :postal_code
+        = f.text_field :postal_code
+      .actions = f.submit

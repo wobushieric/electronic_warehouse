@@ -1,2 +1,32 @@
-h1 CustAddress#index
-p Find me in app/views/cust_address/index.html.slim
+.container
+  .row
+    h4
+      = current_user.email.split("@").first.capitalize
+      | 's User Centre
+  - if !@address.blank?
+    .row
+      h5
+       | Current Shipping Address
+    .row
+      h7
+        = @address.first_name
+        |   
+        = @address.last_name
+    .row
+      h7
+        = @address.address
+        |  , 
+        = @address.city
+        |  , 
+        = @address.province.name
+    .row
+      h7
+        = @address.postal_code
+    .row
+      .col
+        = link_to 'Update shipping address', user_centre_new_address_path, :class => "btn btn-primary my-2"
+      .col
+        = link_to 'Delete existing address', user_centre_delete_address_path, :class => "btn btn-secondary my-2"
+  - else
+    .row
+      = link_to 'Add new shipping address', user_centre_new_address_path, :class => "btn btn-primary my-2"

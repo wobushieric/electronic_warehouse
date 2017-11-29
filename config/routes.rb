@@ -1,12 +1,14 @@
 Rails.application.routes.draw do
 
-  get 'cust_address/index'
+  get 'user_centre', to: 'cust_address#index'
 
-  get 'cust_address/new'
+  get 'user_centre/new_address', to: 'cust_address#new'
+
+  post 'user_centre/new_address', to: 'cust_address#creat'
 
   get 'cust_address/update'
 
-  get 'cust_address/delete'
+  get 'user_centre/delete_address', to: 'cust_address#delete'
 
   devise_for :users
   root :to => 'product#home'
