@@ -2,6 +2,8 @@ class CustAddressController < ApplicationController
   def index
   	if user_signed_in?
   	  @address = CustAddress.where(:user_id => current_user.id).first
+
+      @cust_orders = Order.where(:user_id => current_user.id)
   	else
   	  redirect_to new_user_session_path
   	end

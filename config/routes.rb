@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'order/details/:order_id', to: 'order#view', as: 'order_details'
+
   get 'charge/new', to: 'charge#new'
 
   get 'charge/charge'

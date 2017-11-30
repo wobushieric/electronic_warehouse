@@ -1,0 +1,11 @@
+.row.my-2
+  .col
+    = order_record.created_at
+  .col
+    = order_record.cust_name
+  .col
+    = order_record.shipping_address
+  .col
+    = order_record.order_status.name
+  .col
+    = link_to 'Details', order_details_path(order_record.id), :class => "btn btn-primary"

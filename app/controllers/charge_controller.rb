@@ -1,11 +1,11 @@
 class ChargeController < ApplicationController
   def new
     cust_address = CustAddress.where(:user_id => current_user.id).first
+    recieved_status = OrderStatus.where(:name => "Received").first
 
     new_order = Order.create(province_id: cust_address.province_id,
     	                     user_id: current_user.id,
-    	                     is_shipped: false,
-    	                     is_paid: false,
+    	                     order_status_id: recieved_status.id,
     	                     cust_name: "#{cust_address.first_name} #{cust_address.last_name}",
     	                     shipping_address: "#{cust_address.address}, #{cust_address.city}")
 
